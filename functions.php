@@ -163,12 +163,7 @@ function hellobase_scripts() {
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
     remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
-    # Removed and added jQuery Core again to call it in footer
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
-    wp_enqueue_script( 'jquery' );
-
-    # Owl Carousel Script Added, If not required, you can remove this
+     # Owl Carousel Script Added, If not required, you can remove this
     wp_enqueue_script( 'hellobase-owl-carousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '2.0', true );
 
     # Create base.js to include general scripts as much possible without conflict
